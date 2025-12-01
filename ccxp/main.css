@@ -1,0 +1,902 @@
+ @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Poppins:wght@300;400;500;700&display=swap');
+
+:root {
+    --adm-grad: linear-gradient(to right, #4facfe, #00f2fe);
+    --cor-admin: #0d6efd; 
+    --agro-grad: linear-gradient(to right, #43e97b, #38f9d7);
+    --cor-agro: #198754;
+    --cont-grad: linear-gradient(to right, #fa709a, #fee140);
+    --cor-cont: #d63384;
+    --info-grad: linear-gradient(to right, #f83600, #fe8c00);
+    --cor-info: #dc3545;
+    --fundo-escuro: rgba(36, 64, 35);
+    --fundo-claro: #f0f2f5; 
+    --texto-principal: #2d3436;
+    --texto-suave: #636e72;
+    --branco: #ffffff;
+    --sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --ceara-verde: #009739;
+    --ceara-amarelo: #fdd116;
+    --ceara-gradiente: linear-gradient(135deg, #009739 0%, #006e29 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', 'Poppins', sans-serif; 
+    background-color: var(--fundo-claro);
+    color: var(--texto-principal);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.cabecalho {
+    background:rgba(36, 64, 35, 0.95); 
+    backdrop-filter: blur(10px); 
+    padding: 1rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    gap: 15px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-texto {
+    color: var(--branco);
+    font-size: 1.5rem;
+    font-weight: 700px;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+}
+
+.cabecalho {
+    border-top: 5px solid var(--ceara-verde); 
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.menu a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.menu a:hover {
+    color: var(--branco);
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* --- Seção Destaque (Hero) --- */
+.secao-destaque {
+    /* Gradiente mais moderno sobre a foto */
+    background: linear-gradient(135deg, rgba(50, 89, 39, 0.85) 0%, rgba(120, 203, 108, 0.5) 100%), url('../img/escola-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--branco);
+    text-align: center;
+    padding: 120px 20px; /* Mais espaço */
+    margin-bottom: 60px;
+    border-radius: 0 0 50px 50px; /* Curva moderna na parte de baixo */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.secao-destaque h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+/* --- Cartões dos Cursos (Redesign) --- */
+.grade-cursos {
+    display: flex;            /* Permite quebrar linha se faltar espaço */
+    justify-content: center;   /* Centraliza os cartões na tela */
+    gap: 30px;                 /* Espaço entre eles */
+    padding: 20px 0;
+    width: 100%;
+}
+
+.cartao-curso {
+    flex: 1 1 250px;           /* Cresce, encolhe, base de 250px */
+    max-width: 280px;          /* Trava a largura máxima para não esticar demais */
+    min-width: 250px;          /* Garante um tamanho mínimo */
+    /* ... mantenha o restante do estilo visual (background, border, etc) ... */
+    background: var(--branco);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* Barra de cor Gradiente no topo do card */
+.cartao-curso::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: #e0e0e0;
+    transition: height 0.3s ease;
+}
+
+/* Classes específicas para as cores dos gradientes */
+.borda-adm::before { background: var(--adm-grad); }
+.borda-agro::before { background: var(--agro-grad); }
+.borda-cont::before { background: var(--cont-grad); }
+.borda-info::before { background: var(--info-grad); }
+
+/* Efeito Hover no Card */
+.cartao-curso:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Animação da Imagem */
+.cartao-curso img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito elástico */
+    margin-bottom: 20px;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+    border-radius: 80px;
+}
+
+.cartao-curso:hover img {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* Títulos dentro dos cards */
+.cartao-curso h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+
+
+/* --- Rodapé --- */
+.rodape {
+    background-color: var(--fundo-escuro);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+    font-size: 0.9rem;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .secao-destaque h1 { font-size: 2.2rem; }
+    .menu ul { 
+        flex-direction: column; 
+        align-items: center; 
+        background: var(--fundo-escuro);
+        padding: 20px;
+        border-radius: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .container { flex-direction: column; }
+    .grade-cursos { padding: 0 20px; }
+}
+
+.curso-header {
+    background-color: var(--branco); /* Fallback */
+    padding: 60px 0;
+    text-align: center;
+    border-radius: 0 0 50px 50px; /* Curva moderna na base */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.5s ease;
+}
+
+/* Ícone Redondo no Topo */
+.icone-destaque {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    padding: 25px;
+    background: var(--branco);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+    object-fit: contain;
+    border: 4px solid rgba(255,255,255,0.5); /* Borda sutil */
+    backdrop-filter: blur(5px);
+}
+
+/* Container de Informações (Grid) */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsivo */
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+/* Caixas de Texto (Sobre, Aprender, Mercado) */
+.info-box {
+    background: var(--branco);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid rgba(0,0,0,0.02);
+    border-left: 5px solid #ccc; /* A cor muda via JS */
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+}
+
+.info-box h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color: var(--texto-principal);
+    font-weight: 700;
+}
+
+.info-box p, .info-box li {
+    color: var(--texto-suave);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Estilização da lista "O que vou aprender" */
+#lista-aprender li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#lista-aprender strong {
+    color: var(--cor-agro); /* Um verde padrão para o 'check', ou muda via JS */
+    font-size: 1.2rem;
+}
+
+/* --- Área da Equipe no Curso --- */
+.lista-equipe {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.membro-equipe {
+    background: var(--branco);
+    padding: 25px;
+    border-radius: 20px;
+    width: 220px;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.membro-equipe:hover {
+    transform: scale(1.05);
+}
+
+.membro-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid transparent; /* A cor da borda vem do JS */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.membro-equipe h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--texto-principal);
+}
+
+/* Responsividade específica para Grid */
+@media (max-width: 768px) {
+    .curso-header {
+        border-radius: 0 0 30px 30px;
+        padding: 40px 0;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+    }
+    
+    .icone-destaque {
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+    }
+}
+
+.secao-historia {
+    background: white;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Detalhe visual (formas geométricas no fundo) */
+.secao-historia::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 200px; height: 200px;
+    background: var(--ceara-amarelo);
+    opacity: 0.1;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.conteudo-historia {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.texto-historia {
+    flex: 1;
+    min-width: 300px;
+}
+
+.texto-historia h2 {
+    color: var(--ceara-verde);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Sublinhado amarelo no título */
+.texto-historia h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--ceara-amarelo);
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.img-historia {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0px var(--ceara-verde); /* Sombra sólida estilosa */
+    max-width: 100%;
+}
+
+/* --- Seção de Números/Diferenciais (Banner Verde) --- */
+.secao-diferenciais {
+    background: var(--ceara-gradiente);
+    color: white;
+    padding: 60px 0;
+    margin-top: 60px;
+}
+
+.grid-diferenciais {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+}
+
+.item-diferencial h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--ceara-amarelo);
+}
+
+.item-diferencial p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.secao-projetos {
+    background-color: var(--branco);
+    padding: 80px 0;
+    position: relative;
+}
+
+/* Títulos de Seção */
+.titulo-secao {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--texto-principal);
+    font-weight: 700;
+}
+.titulo-secao span { color: var(--ceara-verde); }
+
+/* --- Grid de Projetos (6 cards) --- */
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.card-projeto {
+    background: var(--fundo-claro);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.img-projeto {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #ddd; /* Cor de fundo caso imagem falhe */
+}
+
+.conteudo-projeto {
+    padding: 25px;
+    flex-grow: 1; /* Faz o texto ocupar o espaço restante */
+}
+
+.tag-projeto {
+    background: var(--cor-admin); /* Azul padrão, muda via classe */
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.card-projeto h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: var(--texto-principal);
+}
+
+.card-projeto p {
+    font-size: 0.95rem;
+    color: var(--texto-suave);
+    line-height: 1.5;
+}
+
+/* --- Olimpíadas (Badges) --- */
+.container-olimpiadas {
+    text-align: center;
+    background: var(--fundo-escuro);
+    border-radius: 30px;
+    padding: 50px 30px;
+    color: white;
+    margin-bottom: 80px;
+    background-image: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+}
+
+.lista-olimpiadas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.badge-olimpiada {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge-olimpiada:hover {
+    background: var(--ceara-amarelo);
+    color: var(--fundo-escuro);
+    transform: scale(1.1);
+    font-weight: 700;
+}
+
+/* --- Estágio e Projeto Social (Cards Laterais) --- */
+.grid-info-extra {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.card-destaque {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--sombra-suave);
+    border-left: 8px solid var(--ceara-verde);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-destaque h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--texto-principal);
+}
+
+.icone-fundo {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    font-size: 8rem;
+    opacity: 0.05;
+    color: black;
+}
+
+.lista-destaque li {
+    margin-bottom: 15px;
+    list-style: none;
+    padding-left: 25px;
+    position: relative;
+}
+
+.lista-destaque li::before {
+    content: '➜';
+    position: absolute;
+    left: 0;
+    color: var(--ceara-verde);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .grid-info-extra { grid-template-columns: 1fr; }
+}
+
+.organograma {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow-x: hidden; /* Evita rolagem lateral indesejada */
+}
+
+.titulo-pagina {
+    font-size: 2.5rem;
+    color: var(--texto-principal);
+    margin-bottom: 60px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Cards dos Membros --- */
+.card-membro {
+    background: white;
+    width: 240px; /* Um pouco mais largo */
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08); /* Sombra suave moderna */
+    border-top: 6px solid #ccc;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.card-membro:hover {
+    transform: translateY(-8px);
+}
+
+.card-membro img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f8f9fa;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.card-membro h4 { font-size: 1.2rem; margin-bottom: 5px; color: #2d3436; font-weight: 700; }
+.card-membro p { font-size: 0.95rem; color: #636e72; font-weight: 500; }
+
+/* Cores dos Cargos */
+.gestao { border-top-color: var(--cor-admin); }
+.coord { border-top-color: var(--ceara-verde); }
+.prof { border-top-color: var(--cor-info); }
+
+/* --- AS LINHAS CONECTORAS (A Mágica) --- */
+
+/* Linha vertical simples (saída do diretor) */
+.linha-vertical {
+    width: 4px;
+    height: 40px;
+    background-color: #e0e0e0;
+    margin: 0 auto;
+}
+
+/* O "Varal" horizontal que segura os coordenadores */
+.conector-horizontal {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 20px; /* Espaço para a linha chegar */
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* Desenha a linha horizontal ligando os grupos */
+.conector-horizontal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%; /* Largura da linha horizontal */
+    height: 4px;
+    background-color: #e0e0e0;
+}
+
+/* Linha vertical central que liga o diretor ao varal */
+.conector-horizontal::after {
+    content: '';
+    position: absolute;
+    top: -40px; /* Sobe para encontrar o diretor */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 40px;
+    background-color: #e0e0e0;
+}
+
+/* Container dos Coordenadores */
+.grupo-coordenadores {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* Pequena linha acima de CADA coordenador para ligar ao varal */
+.grupo-coordenadores .card-membro::before {
+    content: '';
+    position: absolute;
+    top: -24px; /* Sobe um pouco */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 24px;
+    background-color: #e0e0e0;
+}
+
+/* --- Seções de Professores (Grid) --- */
+.secao-professores {
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 80px;
+}
+
+.titulo-area {
+    font-size: 1.5rem;
+    color: var(--texto-principal);
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border-left: 5px solid var(--ceara-verde);
+}
+
+.grid-docente {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.mini-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.mini-card:hover { transform: scale(1.03); }
+.mini-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #eee;
+}
+
+/* --- Equipe de Apoio (Agora no Final, Estilo Moderno) --- */
+.secao-apoio {
+    background: #2d3436; /* Fundo escuro elegante */
+    width: 100%;
+    padding: 60px 20px;
+    color: white;
+    margin-top: 50px;
+    border-radius: 30px 30px 0 0;
+    text-align: center;
+}
+
+.grid-apoio {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.item-apoio {
+    max-width: 200px;
+}
+
+.item-apoio i {
+    font-size: 2.5rem;
+    color: var(--ceara-amarelo); /* Destaque amarelo */
+    margin-bottom: 15px;
+}
+.nor{
+    width: 200px;
+    height: 150px;
+    position: relative;
+    left:50px;
+}
+.nor1{
+    font-size: 20px;
+    color: #636e72;
+    position: relative;
+    top:-30px;
+    left: -15px;
+}
+.nor2{
+    width: 150px;
+    height: 200px;
+    position: relative;
+    bottom: 320px;
+    left:20px;
+}
+.nor3{
+   width: 150px;
+   height: 200px;
+   position: relative;
+}
+.ert{
+    position: relative;
+    left:-34px;
+    top:-350px;
+    
+}
+.faz{
+    color: #1a1a1a;
+}
+.nor3{
+    position: relative;
+    left: -180px;
+    top:160px;
+    color: #636e72;
+    
+}
+.nor4{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top:200px;
+}
+.iz2{
+    color: #636e72;
+    position: relative;
+    top:160px;
+    left: 125px;
+}
+.ri2{
+    position: relative;
+    bottom: 300px;
+    color: #1a1a1a;
+}
+.info-box1{
+    position: relative;
+    
+}
+.info-box2{
+    position: relative;
+}
+.nor6{
+    width: 160px;
+    height:150px;
+    position: relative;
+    left: 190px;
+}
+.nor7{
+    position: relative;
+    top:150px;
+    left:-10px;
+    color: #636e72;
+}
+.nor8{
+   width: 150px;
+   height: 150px;
+   position: relative;
+   top:200px;
+}
+.nor11{
+    width: 170px;
+    height: 150px;
+    position: relative;
+    left:130px;
+
+}
+.nor44{
+    position: relative;
+    left: -80px;
+    top:160px;
+    color: #636e72;
+}
+.iz33{
+     color: #636e72;
+    position: relative;
+    top:370px;
+    left: -190px;
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .conector-horizontal::before { width: 90%; } /* Linha diminui no celular */
+    .grupo-coordenadores { flex-direction: column; align-items: center; }
+    .conector-horizontal { display: none; } /* Esconde linhas complexas no celular */
+    .grupo-coordenadores .card-membro::before { display: none; }
+    .linha-vertical { height: 20px; }
+}
