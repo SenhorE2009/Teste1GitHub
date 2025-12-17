@@ -1,244 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EEEP Dr. Napoleão Neves da Luz</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="externo" href="ccxp.html">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>História da internet</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='main.js'></script>
 </head>
-
 <body>
-
-    <header class="cabecalho">
-        <div class="container">
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <img src="yui.png" alt="Brasão EP" class="logo-img"> 
-                <a href="index.html" class="logo-texto">
-                    EEEP Dr. Napoleão Neves da Luz
-                    <span style="display: block; font-size: 0.8rem; font-weight: 400; color: #aaa;">Educação Profissional - CREDE 19</span>
-                </a>
-            </div>
-            
-            <nav class="menu">
-                <ul>
-                    <li><a href="index.html" style="color: var(--ceara-verde);">Início</a></li>
-                    <li><a href="#cursos">Cursos</a></li>
-                    <li><a href="equipe.html">Equipe</a></li>
-                    <li><a href="#historia">A Escola</a></li>
-                    <li><a href="ccxp.html">Venha fazer o nosso Quiz</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="secao-destaque">
-        <div class="conteudo-destaque">
-            <h1>O Futuro Começa <br> <span style="color: var(--ceara-amarelo);">Agora.</span></h1>
-            <p style="font-size: 29px; max-width: 600px; margin: 0 auto 30px auto;">
-                Formação técnica de excelência integrada ao ensino médio em tempo integral. 
-                Preparando jovens protagonistas para o mercado de trabalho e para a vida.
-            </p>
-            <a href="#cursos" class="btn-hero" style="color: var(--ceara-verde);">Conheça Nossos Cursos</a>
-        </div>
-    </section>
-
-    <section id="historia" class="secao-historia">
-        <div class="container conteudo-historia">
-            <div class="texto-historia">
-                <h2>Nossa História e Missão</h2>
-                <p style="margin-bottom: 25px; line-height: 1.8; color: #555;">
-                    A <strong>Escola Estadual de Educação Profissional (EEEP) Dr. Napoleão Neves da Luz</strong> nasceu do sonho de transformar a realidade da região através da educação. Integrante da rede pública estadual do Ceará (CREDE 19), nossa instituição se destaca pelo compromisso com o <strong>Ensino Médio Integrado</strong> em tempo integral.
-                </p>
-                <p style="margin-bottom: 15px; line-height: 1.8; color: #555;">
-                    Mais do que formar técnicos, formamos cidadãos. Nossa metodologia une o conhecimento propedêutico (base comum) com a prática profissional avançada em laboratórios equipados e projetos sociais que impactam a comunidade local.
-                </p>
-                <p style="color: #555;">
-                    <i class="fas fa-check-circle" style="color: var(--ceara-verde);"></i> Referência na CREDE 19<br>
-                    <i class="fas fa-check-circle" style="color: var(--ceara-verde);"></i> Estágios em empresas parceiras<br>
-                    <i class="fas fa-check-circle" style="color: var(--ceara-verde);"></i> Projetos premiados em feiras científicas
-                </p>
-            </div>
-            <img src="yui.png" alt="Alunos da EEEP" class="img-historia">
-        </div>
-    </section>
-
-    <section class="secao-diferenciais">
-        <div class="container grid-diferenciais">
-            <div class="item-diferencial">
-                <i class="fas fa-user-graduate" style="font-size: 50px; margin-bottom: 10px; opacity: 0.9;"></i>
-                <h3>4</h3>
-                <p>Cursos Técnicos</p>
-            </div>
-            <div class="item-diferencial">
-                <i class="fas fa-clock" style="font-size: 50px; margin-bottom: 10px; opacity: 0.9;"></i>
-                <h3>Integral</h3>
-                <p>Ensino em Tempo Integral</p>
-            </div>
-            <div class="item-diferencial">
-                <i class="fas fa-briefcase" style="font-size:50px; margin-bottom: 10px; opacity: 0.9;"></i>
-                <h3>300h+</h3>
-                <p>Horas de Estágio</p>
-            </div>
-            <div class="item-diferencial">
-                <i class="fas fa-hands-helping" style="font-size: 50px; margin-bottom: 10px; opacity: 0.9;"></i>
-                <h3>Social</h3>
-                <p>Projetos na Comunidade</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="cursos" class="container" style="margin-top: 80px; margin-bottom: 80px;">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h2 style="font-size: 50px; color: var(--texto-principal);">Cursos Ofertados</h2>
-            <p style="color: #666;">Escolha o caminho para o seu sucesso profissional</p>
-            <div style="width: 100px; height: 4px; background: var(--ceara-verde); margin: 20px auto;"></div>
-        </div>
-        
-        <div class="grade-cursos">
-            <a href="cursos.html?id=adm" class="cartao-curso borda-adm">
-                <img src="ADM.png" alt="Leão - Administração">
-                <h3 style="color: var(--cor-admin)">Administração</h3>
-                <p>Gestão e Liderança</p>
-            </a>
-
-            <a href="cursos.html?id=agro" class="cartao-curso borda-agro">
-                <img src="AGRO.png" alt="Touro - Agropecuária">
-                <h3 style="color: var(--cor-agro)">Agropecuária</h3>
-                <p>Campo e Tecnologia</p>
-            </a>
-
-            <a href="cursos.html?id=cont" class="cartao-curso borda-cont">
-                <img src="CONTABIL.png" alt="Coruja - Contabilidade">
-                <h3 style="color: var(--cor-cont)">Contabilidade</h3>
-                <p>Finanças e Exatidão</p>
-            </a>
-
-            <a href="cursos.html?id=info" class="cartao-curso borda-info">
-                <img src="INFOR (1).png" alt="Raposa - Informática">
-                <h3 style="color: var(--cor-info)">Informática</h3>
-                <p>Inovação e Código</p>
-            </a>
-        </div>
-    </section>
-
-    <section id="projetos" class="secao-projetos">
-        <div class="container" style="display: block;"> <h2 class="titulo-secao">Projetos & <span>Conquistas</span></h2>
-
-            <div class="grid-projetos">
-                
-                <article class="card-projeto">
-                    <img src="img/ipe.png" class="img-projeto" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <span class="tag-projeto" style="background: var(--cor-info);">Escolar</span>
-                        <h4>IpêNapô</h4>
-                        <p>Projeto de resgate da cultura negra. Também em pról do dia da Consciência Negra.</p>
-                    </div>
-                </article>
-
-                <article class="card-projeto">
-                    <img src="img/feira.png" class="img-projeto" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <span class="tag-projeto" style="background: var(--cor-agro);">Escolar</span>
-                        <h4>Feira das Profissões</h4>
-                        <p>Evento direcionado para a comunidade para a divulgação dos cursos da escola</p>
-                    </div>
-                </article>
-
-                <article class="card-projeto">
-                    <img src="img/correio.png" class="img-projeto" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <span class="tag-projeto" style="background: var(--cor-admin);">Grêmio</span>
-                        <h4>Correio Elegante</h4>
-                        <p>Evento facultativo idealizado pelo Grêmio Estudantil, comemorando o Dia dos Namorados.</p>
-                    </div>
-                </article>
-
-                <article class="card-projeto">
-                    <img src="img/hallow.png" class="img-projeto" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <span class="tag-projeto" style="background: var(--cor-cont);">Grêmio</span>
-                        <h4>Halloween</h4>
-                        <p>Evento facultativo também idealizado pelo Grêmio Estudantil, conta com filmes e desfiles de fantasias.</p>
-                    </div>
-                </article>
-
-                <article class="card-projeto">
-                    <img src="img/saojoao.png" class="img-projeto" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <span class="tag-projeto" style="background: var(--cor-info);">Escolar</span>
-                        <h4>São João</h4>
-                        <p>Evento festivo, com quadrilhas organizadas pelos alunos e vendas de especiarias juninas.</p>
-                    </div>
-                </article>
-
-                <article class="card-projeto">
-                    <img src="img/cearacien.png" class="img-projeto" alt="Projeto">
-                    <div class="conteudo-projeto">
-                        <span class="tag-projeto" style="background: var(--ceara-verde);">Escolar</span>
-                        <h4>Ceará Científico</h4>
-                        <p>Evento estadual com a participação da Napoleão, mostra de projetos escolares.</p>
-                    </div>
-                </article>
-
-            </div>
-
-            <div class="container-olimpiadas">
-                <h3><i class="fas fa-medal" style="color: var(--ceara-amarelo);"></i> Nossas Olimpíadas</h3>
-                <p style="opacity: 0.9; margin-top: 15px;">Incentivamos a excelência acadêmica através da participação em diversas competições nacionais.</p>
-                
-                <div class="lista-olimpiadas">
-                    <div class="badge-olimpiada"><i class="fas fa-trophy"></i> OBMEP</div>
-                    <div class="badge-olimpiada"><i class="fas fa-flask"></i> OBA (Astronomia)</div>
-                    <div class="badge-olimpiada"><i class="fas fa-rocket"></i> ONC (Ciências)</div>
-                    <div class="badge-olimpiada"><i class="fas fa-dna"></i> OQEP (Química)</div>
-                    <div class="badge-olimpiada"><i class="fas fa-laptop-code"></i> OBI (Informática)</div>
-                    <div class="badge-olimpiada"><i class="fas fa-book"></i> OP (Português)</div>
-                    <div class="badge-olimpiada"><i class="fas fa-globe-americas"></i> ONHB (História)</div>
-                    <div class="badge-olimpiada"><i class="fas fa-leaf"></i> Agropecuária</div>
-                    <div class="badge-olimpiada"><i class="fas fa-calculator"></i> Canguru Matemático</div>
-                    <div class="badge-olimpiada"><i class="fas fa-robot"></i> OBR (Robótica)</div>
-                </div>
-            </div>
-
-            <div class="grid-info-extra">
-                
-                <div class="card-destaque">
-                    <i class="fas fa-briefcase icone-fundo"></i>
-                    <h3 style="color: var(--cor-admin);">Programa de Estágio</h3>
-                    <p style="margin-bottom: 30px;">Etapa obrigatória fundamental para a inserção no mercado de trabalho, conectando a teoria à prática real.</p>
-                    <ul class="lista-destaque">
-                        <li><strong>Gestão/Comércio:</strong> 250 horas de prática.</li>
-                        <li><strong>Demais Cursos:</strong> 300 horas de imersão técnica.</li>
-                        <li>Parceria com grandes empresas da região do Cariri.</li>
-                        <li>Supervisão direta de professores orientadores.</li>
-                    </ul>
-                </div>
-
-                <div class="card-destaque" style="border-left-color: var(--cor-cont);">
-                    <i class="fas fa-hands-helping icone-fundo"></i>
-                    <h3 style="color: var(--cor-cont);">Projeto Social</h3>
-                    <p style="margin-bottom: 30px;">Formação humana e cidadã. Os alunos devolvem à sociedade o conhecimento adquirido.</p>
-                    <ul class="lista-destaque">
-                        <li><strong>Carga Horária:</strong> 100 horas dedicadas à comunidade.</li>
-                        <li>Criação e execução de soluções para problemas reais.</li>
-                        <li>Foco em sustentabilidade, educação e inclusão.</li>
-                        <li>Desenvolvimento de empatia e responsabilidade social.</li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <footer class="rodape">
-        <div class="container">
-            <p>&copy; 2025 EEEP Dr. Napoleão Neves da Luz - Jardim/CE.</p>
-            <p style="font-size: 0.8rem; opacity: 0.9; margin-top: 10px;">Desenvolvido com carinho pela turma de Informática.</p>
-        </div>
-    </footer>
-
+    <div class="menu">
+        <naw>
+        <a href="index03.html" class="lis1">Grandes nomes</a>
+        <a href="index02.html" class="lis2">Principais usos da internet</a>
+        <a href="index01.html" class="lis3">O que é e como surgiu</a>
+        </naw>
+<div class="tly">
+    <h2 class="tit"><span style="color:red";>História</span><br><span style="color:green";>da</span><br><span style="color:blue";>internet</span></h2>
+</div>
+<a href="index01.html" class="but">Clique aqui</a>
+<footer class="rod">
+    <h3 class="rod1">DESENVOLVEDOR: José Eduardo</h3>
+    
+</footer>
 </body>
 </html>
